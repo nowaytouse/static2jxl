@@ -25,8 +25,8 @@
 #define MAX_THREADS 32
 #define DEFAULT_THREADS 4
 
-// Size threshold for lossless formats (2MB)
-#define MIN_LOSSLESS_SIZE (2 * 1024 * 1024)
+// Size threshold for lossless formats (1.25MB)
+#define MIN_LOSSLESS_SIZE (1280 * 1024)
 
 // JXL quality settings
 #define JXL_DISTANCE_LOSSLESS 0.0  // Mathematically lossless (-d 0)
