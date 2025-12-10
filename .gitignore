@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+static2jxl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test_output/
+*.jxl
