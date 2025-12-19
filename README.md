@@ -71,6 +71,51 @@ make
 brew install jpeg-xl exiftool  # macOS
 ```
 
+## Test Coverage / 测试覆盖
+
+**Total: 47 precision tests ✅**
+
+| Category | Tests | Description |
+|----------|-------|-------------|
+| Size Reduction | 6 | Formula: `(1 - output/input) * 100%` |
+| Size Threshold | 5 | 2MB threshold for lossless sources |
+| JXL Distance | 3 | Distance parameter validation |
+| Magic Bytes | 9 | JPEG/PNG/BMP/TIFF/JXL/PPM detection |
+| TIFF Compression | 5 | Compression type suitability |
+| Lossless Source | 5 | PNG/BMP/PPM classification |
+| **Consistency** | **14** | **5-level verification system** |
+
+### 🔄 Consistency Verification System / 一致性验证系统
+
+Following `shared_utils` pattern from modern_format_boost:
+
+遵循 modern_format_boost 的 `shared_utils` 模式：
+
+| Level | Tests | Description |
+|-------|-------|-------------|
+| L1: Deterministic | 4 | Same input → same output (100 iterations) |
+| L2: Cross-Function | 2 | Related functions agree |
+| L3: Boundary | 3 | Edge cases handled uniformly |
+| L4: Pipeline | 2 | Input → process → output chain |
+| L5: Data Integrity | 3 | Mathematical relationships hold |
+
+### Run Tests / 运行测试
+
+```bash
+cd tests
+make test
+# Or manually:
+cc -o test_precision test_precision.c -lm
+./test_precision
+```
+
+### Quality Principles / 质量原则
+
+- ✅ **Precision Validated** - All calculations verified by "裁判" tests
+- ✅ **Content-Based Detection** - Magic bytes, not extensions
+- ✅ **Fail Loudly** - No silent fallback
+- ✅ **Consistency Guaranteed** - Same input → same output
+
 ---
 
 ## 功能特性
